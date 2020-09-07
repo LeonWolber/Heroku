@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <title>ML Model Deployment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+
+<body>
+ <div class="login">
+	<h1>Predict Wine Quality</h1>
+
+     <p3> Enter the following information to predict this wine's quality. Please pay attention to the given range of values per category when entering the information!</p3>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+        <label for="2">Fixed Acidity</label>
+    	<input type="text", id="2" name="fix_ac", placeholder="4.50 - 15.90" required="required" />
+
+        <label for="3">Volatile Acidity</label>
+        <input type="text", id="3" name="vol_ac" placeholder="0.15 - 1.50" required="required" />
+
+        <label for="4">Citric Acid</label>
+        <input type="text", id="4" name="cit_ac" placeholder="0.00 - 1.00" required="required" />
+
+        <label for="5">Residual Sugar</label>
+        <input type="text", id="5" name="res_sug" placeholder="0.90 - 15.50" required="required" />
+
+        <label for="6">Chlorides</label>
+        <input type="text", id="6" name="chlor" placeholder="0.012 - 0.611" required="required" />
+
+        <label for="7">Free Sulfur Dioxide</label>
+        <input type="text", id="7" name="fsd" placeholder="1 - 72" required="required" />
+
+        <label for="8">Total Sulfur Dioxide</label>
+        <input type="text", id="8" name="tsd" placeholder="6 - 289" required="required" />
+
+        <label for="9">Density</label>
+        <input type="text", id="9" name="Dens" placeholder="0.99 - 1.00" required="required" />
+
+        <label for="10">pH</label>
+        <input type="text", id="10" name="pH" placeholder="2.74 - 4.01" required="required" />
+
+        <label for="11">Sulphates</label>
+        <input type="text", id="11" name="sul" placeholder="0.33 - 2.00" required="required" />
+
+        <label for="12">Alcohol</label>
+        <input type="text", id="12" name="alc" placeholder="8.40 - 14.90" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
+
